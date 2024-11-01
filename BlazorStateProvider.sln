@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorStateManager", "src\BlazorStateManager\BlazorStateManager.csproj", "{AD9A566F-EA73-489E-9D5B-5EB652246A05}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorStateProvider", "src\BlazorStateProvider\BlazorStateProvider.csproj", "{AD9A566F-EA73-489E-9D5B-5EB652246A05}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorStateManager.Demo", "demo\BlazorStateManager.Demo\BlazorStateManager.Demo.csproj", "{DF14DFD3-1213-457F-B2C4-5A9434FB949A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorStateProvider.Demo", "demo\BlazorStateProvider.Demo\BlazorStateProvider.Demo.csproj", "{DF14DFD3-1213-457F-B2C4-5A9434FB949A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,6 +1,6 @@
-# BlazorStateManager
+# BlazorStateProvider
 
-BlazorStateManager is a state management library for Blazor applications that simplifies the management of state using local and session storage. It provides a clean and easy-to-use API for managing application state across components, ensuring that state is persisted as needed.
+BlazorStateProvider is a state management library for Blazor applications that simplifies the management of state using local and session storage. It provides a clean and easy-to-use API for managing application state across components, ensuring that state is persisted as needed.
 
 ## Features
 
@@ -15,21 +15,21 @@ BlazorStateManager is a state management library for Blazor applications that si
 
 ## Installation
 
-You can install the BlazorStateManager NuGet package using the .NET CLI:
+You can install the BlazorStateProvider NuGet package using the .NET CLI:
 
 ```bash
-dotnet add package BlazorStateManager
+dotnet add package BlazorStateProvider
 ```
-Or by adding it via the NuGet Package Manager in Visual Studio / Rider.
+Or by adding it via the NuGet Package Provider in Visual Studio / Rider.
 
 ## Getting Started
 
 ### 1. Register the Services
 
-To use the BlazorStateManager in your application, register the services in your Program.cs file:
+To use the BlazorStateProvider in your application, register the services in your Program.cs file:
 
 ```csharp
-using BlazorStateManager.Extensions;
+using BlazorStateProvider.Extensions;
 
 public class Program
 {
@@ -38,20 +38,20 @@ public class Program
         var builder = WebAssemblyHostBuilder.CreateDefault(args);
         builder.RootComponents.Add<App>("#app");
 
-        // Register BlazorStateManager services
-        builder.Services.AddBlazorStateManager();
+        // Register BlazorStateProvider services
+        builder.Services.AddBlazorStateProvider();
 
         await builder.Build().RunAsync();
     }
 }
 ```
 
-### 2. Inject and Use the State Manager
-You can now inject the state managers into your Blazor components.
+### 2. Inject and Use the State Provider
+You can now inject the state Providers into your Blazor components.
 
 ```csharp
 @page "/example"
-@inject IStateManager StateManager
+@inject IStateProvider StateProvider
 
 <h3>State Management Example</h3>
 
@@ -61,12 +61,12 @@ You can now inject the state managers into your Blazor components.
 @code {
     private async Task SaveState()
     {
-        await StateManager.SetStateAsync("exampleKey", "Hello, World!");
+        await StateProvider.SetStateAsync("exampleKey", "Hello, World!");
     }
 
     private async Task LoadState()
     {
-        var value = await StateManager.GetStateAsync<string>("exampleKey");
+        var value = await StateProvider.GetStateAsync<string>("exampleKey");
         Console.WriteLine($"Loaded State: {value}");
     }
 }
@@ -76,9 +76,9 @@ You can now inject the state managers into your Blazor components.
 
 ### Interfaces
 
-- `IStateManager`: The main interface for managing state in Blazor applications.
-- `ILocalStorageStateManager`: Interface for managing state using local storage.
-- `ISessionStorageStateManager`: Interface for managing state using session storage.
+- `IStateProvider`: The main interface for managing state in Blazor applications.
+- `ILocalStorageStateProvider`: Interface for managing state using local storage.
+- `ISessionStorageStateProvider`: Interface for managing state using session storage.
 
 ### Methods
 
@@ -90,11 +90,11 @@ You can now inject the state managers into your Blazor components.
 - `Unsubscribe<T>(Action callback)`: Unsubscribes from state change notifications for the specified key.
 
 ## Example
-Here’s a simple example of how to use the BlazorStateManager in your components:
+Here’s a simple example of how to use the BlazorStateProvider in your components:
 
 ```csharp
 @page "/example"
-@inject ILocalStorageStateManager LocalStorageManager
+@inject ILocalStorageStateProvider LocalStorageProvider
 
 <h3>Local Storage Example</h3>
 
@@ -104,12 +104,12 @@ Here’s a simple example of how to use the BlazorStateManager in your component
 @code {
     private async Task SaveToLocalStorage()
     {
-        await LocalStorageManager.SetStateAsync("username", "JohnDoe");
+        await LocalStorageProvider.SetStateAsync("username", "JohnDoe");
     }
 
     private async Task LoadFromLocalStorage()
     {
-        var username = await LocalStorageManager.GetStateAsync<string>("username");
+        var username = await LocalStorageProvider.GetStateAsync<string>("username");
         Console.WriteLine($"Loaded Username: {username}");
     }
 }

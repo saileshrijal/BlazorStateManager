@@ -1,6 +1,6 @@
 ﻿@page "/sessionstoragestate"
-@using BlazorStateManager.Interface
-@inject ISessionStorageStateManager SessionStorageManager
+@using BlazorStateProvider.Interface
+@inject ISessionStorageStateProvider SessionStorageProvider
 
 <h3>Session Storage Demo</h3>
 <p>Current Session Storage Count: @_sessionCount</p>
@@ -12,18 +12,18 @@
 
     protected override async Task OnInitializedAsync()
     {
-        _sessionCount = await SessionStorageManager.GetStateAsync<int>("sessionCount");
+        _sessionCount = await SessionStorageProvider.GetStateAsync<int>("sessionCount");
     }
 
     private async Task IncrementSessionCount()
     {
         _sessionCount++;
-        await SessionStorageManager.SetStateAsync("sessionCount", _sessionCount);
+        await SessionStorageProvider.SetStateAsync("sessionCount", _sessionCount);
     }
 
     private async Task ResetSessionCount()
     {
         _sessionCount = 0;
-        await SessionStorageManager.RemoveStateAsync("sessionCount");
+        await SessionStorageProvider.RemoveStateAsync("sessionCount");
     }
 }

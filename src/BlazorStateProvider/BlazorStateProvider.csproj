@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <Title>BlazorStateProvider</Title>
+        <Authors>Sailesh Rijal</Authors>
+        <Description>BlazorStateProvider is a powerful state management library designed specifically for Blazor applications.</Description>
+        <Copyright>©2024 Sailesh Rijal</Copyright>
+        <PackageProjectUrl>https://github.com/saileshrijal/BlazorStateProvider</PackageProjectUrl>
+        <PackageLicenseUrl>https://raw.githubusercontent.com/saileshrijal/BlazorStateProvider/main/LICENSE</PackageLicenseUrl>
+        <PackageIcon>BlazorStateProvider.png</PackageIcon>
+        <RepositoryUrl>https://github.com/saileshrijal/BlazorStateProvider</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageTags>blazor-state-provider, blazor-state-manager, state-manager, blazor-state, blazor-state-provider, state-provider, state-manager</PackageTags>
+        <PackageOutputPath>C:\Users\Sailesh Rijal\Dropbox\NugetGallery\BlazorStateProvider</PackageOutputPath>
+        <Version>1.0.0</Version>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Blazored.LocalStorage" Version="4.5.0"/>
+        <PackageReference Include="Blazored.SessionStorage" Version="2.4.0"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Update="BlazorStateProvider.png">
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+        </None>
+    </ItemGroup>
+
+</Project>

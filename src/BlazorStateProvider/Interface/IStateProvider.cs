@@ -1,6 +1,6 @@
-namespace BlazorStateManager.Interface;
+namespace BlazorStateProvider.Interface;
 
-public interface IStateManager
+public interface IStateProvider
 {
     Task<T> GetStateAsync<T>(string key);
     Task SetStateAsync<T>(string key, T value);

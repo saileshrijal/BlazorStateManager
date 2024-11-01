@@ -12,7 +12,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\src\BlazorStateManager\BlazorStateManager.csproj" />
+      <ProjectReference Include="..\..\src\BlazorStateProvider\BlazorStateProvider.csproj" />
     </ItemGroup>
 
     <ItemGroup>
