@@ -1,0 +1,29 @@
+﻿@page "/inmemorystate"
+@using BlazorStateManager.Interface
+@inject IStateManager StateManager
+
+<h3>In-Memory State Demo</h3>
+<p>Current In-Memory Count: @_inMemoryCount</p>
+<button @onclick="IncrementInMemoryCount">Increment</button>
+<button @onclick="ResetInMemoryCount">Reset</button>
+
+@code {
+    private int _inMemoryCount;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _inMemoryCount = await StateManager.GetStateAsync<int?>("inMemoryCount") ?? 0;
+    }
+
+    private async Task IncrementInMemoryCount()
+    {
+        _inMemoryCount++;
+        await StateManager.SetStateAsync("inMemoryCount", _inMemoryCount);
+    }
+
+    private async Task ResetInMemoryCount()
+    {
+        _inMemoryCount = 0;
+        await StateManager.RemoveStateAsync("inMemoryCount");
+    }
+}

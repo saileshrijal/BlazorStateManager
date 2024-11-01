@@ -1,6 +1,6 @@
 namespace BlazorStateManager.Interface;
 
-public interface IStateProvider
+public interface ILocalStorageStateManager
 {
     Task<T> GetStateAsync<T>(string key);
     Task SetStateAsync<T>(string key, T value);

@@ -1,0 +1,29 @@
+﻿@page "/localstoragestate"
+@using BlazorStateManager.Interface
+@inject ILocalStorageStateManager LocalStorageManager
+
+<h3>Local Storage Demo</h3>
+<p>Current Local Storage Count: @_localCount</p>
+<button @onclick="IncrementLocalCount">Increment</button>
+<button @onclick="ResetLocalCount">Reset</button>
+
+@code {
+    private int _localCount;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _localCount = await LocalStorageManager.GetStateAsync<int>("localCount");
+    }
+
+    private async Task IncrementLocalCount()
+    {
+        _localCount++;
+        await LocalStorageManager.SetStateAsync("localCount", _localCount);
+    }
+
+    private async Task ResetLocalCount()
+    {
+        _localCount = 0;
+        await LocalStorageManager.RemoveStateAsync("localCount");
+    }
+}

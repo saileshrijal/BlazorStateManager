@@ -3,6 +3,7 @@ using Blazored.SessionStorage;
 using BlazorStateManager.Interface;
 using Microsoft.Extensions.DependencyInjection;
 using BlazorStateManager.Persistence;
+using BlazorStateManager.State;
 
 namespace BlazorStateManager.Extensions
 {
@@ -12,9 +13,9 @@ namespace BlazorStateManager.Extensions
         {
             services.AddBlazoredLocalStorage();
             services.AddBlazoredSessionStorage();
-            services.AddSingleton<IStateProvider, State.BlazorStateManager>();
-            services.AddSingleton<IStateProvider, LocalStorageStateProvider>();
-            services.AddSingleton<IStateProvider, SessionStorageStateProvider>();
+            services.AddScoped<IStateManager, StateManager>();
+            services.AddScoped<ILocalStorageStateManager, LocalStorageStateManager>();
+            services.AddScoped<ISessionStorageStateManager, SessionStorageStateManager>();
         }
     }
 }

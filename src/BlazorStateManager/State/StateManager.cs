@@ -2,7 +2,7 @@ using BlazorStateManager.Interface;
 
 namespace BlazorStateManager.State
 {
-    public class BlazorStateManager : IStateProvider
+    public class StateManager : IStateManager
     {
         private readonly Dictionary<string, object> _state = new();
         private readonly List<Action> _subscribers = [];

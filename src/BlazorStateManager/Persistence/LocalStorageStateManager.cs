@@ -3,7 +3,7 @@ using BlazorStateManager.Interface;
 
 namespace BlazorStateManager.Persistence
 {
-    public class LocalStorageStateProvider(ILocalStorageService localStorageService) : IStateProvider
+    public class LocalStorageStateManager(ILocalStorageService localStorageService) : ILocalStorageStateManager
     {
         private readonly List<Action> _subscribers = new();
 

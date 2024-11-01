@@ -3,7 +3,7 @@ using BlazorStateManager.Interface;
 
 namespace BlazorStateManager.Persistence
 {
-    public class SessionStorageStateProvider(ISessionStorageService sessionStorageService) : IStateProvider
+    public class SessionStorageStateManager(ISessionStorageService sessionStorageService) : ISessionStorageStateManager
     {
         private readonly List<Action> _subscribers = new();
 
