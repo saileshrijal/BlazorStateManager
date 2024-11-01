@@ -9,7 +9,7 @@ namespace BlazorStateProvider.Extensions;
 
 public static class ServiceExtensions
 {
-    public static void AddBlazorStateManager(this IServiceCollection services)
+    public static void AddBlazorStateProvider(this IServiceCollection services)
     {
         services.AddBlazoredLocalStorage();
         services.AddBlazoredSessionStorage();
