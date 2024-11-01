@@ -4,11 +4,29 @@
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <Title>BlazorStateManager</Title>
+        <Authors>Sailesh Rijal</Authors>
+        <Description>BlazorStateManager is a powerful state management library designed specifically for Blazor applications.</Description>
+        <Copyright>©2024 Sailesh Rijal</Copyright>
+        <PackageProjectUrl>https://github.com/saileshrijal/BlazorStateManager</PackageProjectUrl>
+        <PackageLicenseUrl>https://raw.githubusercontent.com/saileshrijal/BlazorStateManager/main/LICENSE</PackageLicenseUrl>
+        <PackageIcon>BlazorStateManager.png</PackageIcon>
+        <RepositoryUrl>https://github.com/saileshrijal/BlazorStateManager</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageTags>blazor-state-manager, state-manager, blazor-state, blazor-state-provider, state-provider, state-manager </PackageTags>
+        <PackageOutputPath>C:\Users\Sailesh Rijal\Dropbox\NugetGallery\BlazorStateManager</PackageOutputPath>
+        <Version>1.0.1</Version>
     </PropertyGroup>
 
     <ItemGroup>
       <PackageReference Include="Blazored.LocalStorage" Version="4.5.0" />
       <PackageReference Include="Blazored.SessionStorage" Version="2.4.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="BlazorStateManager.png">
+        <Pack>True</Pack>
+      </None>
     </ItemGroup>
 
 </Project>

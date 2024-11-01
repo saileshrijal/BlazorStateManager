@@ -4,9 +4,14 @@ BlazorStateManager is a state management library for Blazor applications that si
 
 ## Features
 
-- State management using both local and session storage.
-- Simple API for getting, setting, removing, and resetting state.
-- Subscription mechanism for state change notifications.
+- **State Persistence**: Supports both local and session storage for persisting application state, allowing you to maintain state across user sessions or just within a single session.
+
+- **Simple API**: Provides a straightforward interface for managing state with methods to get, set, remove, and reset state, making it easy to use throughout your Blazor application.
+
+- **State Change Notifications**: Implements a subscription mechanism that notifies components of state changes, enabling a reactive programming model for better UI updates.
+
+- **Type Safety**: Utilizes generics to ensure type-safe state management, reducing the risk of runtime errors when retrieving and storing state values.
+
 
 ## Installation
 
